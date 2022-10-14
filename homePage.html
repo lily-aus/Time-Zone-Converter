@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <h2>Time Zone Converter</h2>
+    <meta name="description" content="Home page">
+    <meta name="keywords" content="time convert">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="announcement">
+        <p>New feature: You can choose up to 10 cities now!</p>
+    </div>
+
+    <table id="baseCity">
+        <tr>
+            <th>City</th>
+            <th>Date</th>
+            <th>Time</th>
+        </tr>
+        <tr>
+            <td><input type="text" id="city1"></td>
+            <td><input type="date" class="today" id="date">
+                <script>
+                    let today = new Date().toISOString().substr(0, 10);
+                    document.querySelector(".today").value = today;
+                </script>
+            </td>
+            <td><input type="time" id="time" value="08:00:00"></td>
+        </tr>
+    </table>
+
+    <table id="moreCity">
+
+        <tr>
+            <td><button type="button" onclick="addNewRowBelow()">Add City</button></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><input type="text" name="city2" id="city2"></td>
+            <td><button type="button" onclick="deleteCurrentRow()">Remove</button></td>
+        </tr>
+    </table>
+
+    <button type="button" onclick='location.href="convertPage.html"'>Convert Time</button>
+
+    <br>
+    <a href="contact.html">Contact us</a>
+
+    <script>
+        function addNewRowBelow() {
+            var table = document.getElementById("moreCity");
+            var currentRowCount = table.rows.length;
+            var newRow = table.insertRow(currentRowCount);
+            var cell1 = newRow.insertCell(0);
+            var cell2 = newRow.insertCell(1);
+            cell1.innerHTML = '<input type="text" name="city2" id="city2">';
+            cell2.innerHTML = '<button type="button" onclick="deleteCurrentRow()">Remove</button>';
+        }
+
+        function deleteCurrentRow() {
+            var td = event.target.parentNode;
+            var tr = td.parentNode;
+            tr.parentNode.removeChild(tr);
+        }
+
+    </script>
+
+</body>
+
+</html>
