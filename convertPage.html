@@ -8,36 +8,40 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 
-<body>
-    <table id="selectedCity">
+<body class="page">
+    <table id="selectedCity" class="convert-city-table">
         <tr>
-            <th>Sydney</th>
-            <th>Tokyo</th>
-            <th>New York</th>
-            <th>Hong Kong</th>
-            <th>London</th>
-            <th>Paris</th>
+            <th class="convert-city">Sydney</th>
+            <th class="convert-city">Tokyo</th>
+            <th class="convert-city">New York</th>
+            <th class="convert-city">Hong Kong</th>
+            <th class="convert-city">London</th>
+            <th class="convert-city">Paris</th>
         </tr>
         <tr>
-            <td>01 October 2022</td>
-            <td>01 October 2022</td>
-            <td>30 September 2022</td>
-            <td>01 October 2022</td>
-            <td>01 October 2022</td>
-            <td>01 October 2022</td>
+            <td class="convert-date">01 October 2022</td>
+            <td class="convert-date">01 October 2022</td>
+            <td class="convert-date">30 September 2022</td>
+            <td class="convert-date">01 October 2022</td>
+            <td class="convert-date">01 October 2022</td>
+            <td class="convert-date">01 October 2022</td>
         </tr>
         <tr>
-            <td>09:00</td>
-            <td>08:00</td>
-            <td>19:00</td>
-            <td>07:00</td>
-            <td>00:00</td>
-            <td>01:00</td>
+            <td class="convert-time">09:00</td>
+            <td class="convert-time">08:00</td>
+            <td class="convert-time">19:00</td>
+            <td class="convert-time">07:00</td>
+            <td class="convert-time">00:00</td>
+            <td class="convert-time">01:00</td>
         </tr>
     </table>
 
 
-    <button type="button" onclick="confirmFunction()">Start again</button>
+    <button type="button" onclick="confirmFunction()" class="btn">Start again</button>
+
+    <br><br><br>
+    <a href="contact.html">Contact us</a>
+
 
     <script>
         function confirmFunction() {

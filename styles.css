@@ -1,3 +1,95 @@
+.page {
+    margin: 10px;
+    font-family: -apple-system, Arial, sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    text-align: left;
+    background-color: #fff;
+    padding: 30px;
+    padding-bottom: 10px;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    max-width: 100%;
+}
+
+.announcement {
+    font-family: -apple-system, Arial, sans-serif;
+    color: brown;
+    text-align: left;
+    line-height: 2;
+}
+
+.input-city {
+    width: 300px;
+    border: 1px solid rgb(163, 167, 172);
+    font-family: -apple-system, Arial, sans-serif;
+    padding: 10px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    font-size: 1rem;
+}
+
+.today {
+    width: 150px;
+    border: 1px solid rgb(163, 167, 172);
+    font-family: -apple-system, Arial, sans-serif;
+    padding: 10px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    font-size: 1rem;
+}
+
+.input-time {
+    width: 150px;
+    border: 1px solid rgb(163, 167, 172);
+    font-family: -apple-system, Arial, sans-serif;
+    padding: 10px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    font-size: 1rem;
+}
+
+
+.convert-city-table {
+    width: 1500px;
+    border: 1px solid rgb(163, 167, 172);
+    font-family: -apple-system, Arial, sans-serif;
+    padding: 10px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    font-size: 1rem;
+}
+
+.convert-city {
+    border: 10px solid rgb(255, 255, 255);
+    font-family: -apple-system, Arial, sans-serif;
+    padding: 10px;
+    margin-bottom: 10px;
+    margin-right: 20px;
+    font-size: 1rem;
+    background-color: #d7d8d8;
+}
+
+.convert-date {
+    border: 10px solid rgb(255, 255, 255);
+    font-family: -apple-system, Arial, sans-serif;
+    padding: 0px;
+    margin-bottom: 10px;
+    margin-right: 20px;
+    font-size: 1rem;
+}
+
+.convert-time {
+    border: 10px solid rgb(255, 255, 255);
+    font-family: -apple-system, Arial, sans-serif;
+    padding: 0px;
+    margin-bottom: 10px;
+    margin-right: 20px;
+    font-size: 1rem;
+}
+
 .body {
     margin: 0;
     font-family: -apple-system, Arial, sans-serif;
@@ -13,6 +105,7 @@
     border-radius: 0.25rem;
     max-width: 100%;
 }
+
 
 .form-group {
     margin-bottom: 1rem;
@@ -73,11 +166,10 @@ textarea.form-control {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-    background-color: #a7caee;
+    background-color: #d7d8d8;
     border: 1px #212529 solid;
     padding: 0.375rem 0.75rem;
     font-size: 1rem;
     line-height: 1.5;
-    border-radius: 0.25rem;
     transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
