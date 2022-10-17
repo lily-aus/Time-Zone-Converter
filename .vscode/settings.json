@@ -1,0 +1,11 @@
+{
+    "git.allowForcePush": true,
+    "git.allowNoVerifyCommit": true,
+    "git.alwaysShowStagedChangesResourceGroup": true,
+    "git.alwaysSignOff": true,
+    "git.autofetch": true,
+    "git.verboseCommit": true,
+    "git.fetchOnPull": true,
+    "search.useParentIgnoreFiles": true,
+    "git.enableSmartCommit": true
+}
