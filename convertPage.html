@@ -36,7 +36,18 @@
         </tr>
     </table>
 
-    <button type="button" onclick='location.href="homePage.html"'>Start again</button>
+
+    <button type="button" onclick="confirmFunction()">Start again</button>
+
+    <script>
+        function confirmFunction() {
+            let text = "Are you sure? \nAfter clicking OK, you will start a new selection.";
+            if (confirm(text) == true) {
+                location.href = "homePage.html";
+            } else {
+            }
+        }
+    </script>
 
 </body>
 
