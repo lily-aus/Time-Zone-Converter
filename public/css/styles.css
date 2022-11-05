@@ -21,7 +21,7 @@
     line-height: 2;
 }
 
-.input-city {
+.input-base-city {
     width: 300px;
     border: 1px solid rgb(163, 167, 172);
     font-family: -apple-system, Arial, sans-serif;
@@ -31,7 +31,17 @@
     font-size: 1rem;
 }
 
-.today {
+.input-more-city {
+    width: 300px;
+    border: 1px solid rgb(163, 167, 172);
+    font-family: -apple-system, Arial, sans-serif;
+    padding: 10px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    font-size: 1rem;
+}
+
+.input-date {
     width: 150px;
     border: 1px solid rgb(163, 167, 172);
     font-family: -apple-system, Arial, sans-serif;

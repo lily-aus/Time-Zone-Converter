@@ -6,7 +6,7 @@
     <h2>Time Zone Converter</h2>
     <meta name="description" content="Home page">
     <meta name="keywords" content="time convert">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="/css/styles.css">
 </head>
 
 <body class="page">
@@ -14,21 +14,21 @@
         <p>New feature: You can choose up to 10 cities now!</p>
     </div>
 
-    <table id="baseCity">
+    <table id="baseSelection">
         <tr>
             <th>City</th>
             <th>Date</th>
             <th>Time</th>
         </tr>
         <tr>
-            <td><input type="text" id="city1" class="input-city"></td>
-            <td><input type="date" class="today" id="date">
+            <td><input type="text" id="baseCity" class="input-base-city"></td>
+            <td><input type="date" class="input-date" id="baseDate">
                 <script>
                     let today = new Date().toISOString().substr(0, 10);
-                    document.querySelector(".today").value = today;
+                    document.querySelector(".input-date").value = today;
                 </script>
             </td>
-            <td><input type="time" id="time" value="08:00:00" class="input-time"></td>
+            <td><input type="time" id="baseTime" value="08:00:00" class="input-time"></td>
         </tr>
     </table>
 
@@ -39,12 +39,12 @@
             <td></td>
         </tr>
         <tr>
-            <td><input type="text" name="city2" id="city2" class="input-city"></td>
+            <td><input type="text" name="city2" class="input-more-city"></td>
             <td><button type="button" onclick="deleteCurrentRow()" class="btn">Remove</button></td>
         </tr>
     </table>
 
-    <button type="button" onclick='location.href="convertPage.html"' class="btn">Convert Time</button>
+    <button type="button" onclick="convertTime()" class="btn">Convert Time</button>
 
     <br><br><br>
     <a href="contact.html">Contact us</a>
@@ -56,7 +56,7 @@
             var newRow = table.insertRow(currentRowCount);
             var cell1 = newRow.insertCell(0);
             var cell2 = newRow.insertCell(1);
-            cell1.innerHTML = '<input type="text" name="city2" id="city2" class="input-city">';
+            cell1.innerHTML = '<input type="text" name="city2" class="input-more-city">';
             cell2.innerHTML = '<button type="button" onclick="deleteCurrentRow()" class="btn">Remove</button>';
         }
 
@@ -67,6 +67,7 @@
         }
 
     </script>
+    <script src="/js/converter.js"></script>
 
 </body>
 
