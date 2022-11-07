@@ -21,13 +21,24 @@ function convertTime() {
         "target": targetCity
     }
 
-
-    console.log(JSON.stringify(dict));
-
-    // Setup our AJAX request
+    // Setup AJAX request
     var xhttp = new XMLHttpRequest();
     xhttp.open("POST", "/test.html", true);
     xhttp.setRequestHeader("Content-Type", "application/json");
+
+    // Tell AJAX request how to resolve (to update once microservice is available)
+    //  xhttp.onreadystatechange = () => {
+    //     if (xhttp.status == 200) {
+
+    //         // Display the data in convertPage.html
+    //         to update once microservice is available
+
+    //     }
+    //     else if (xhttp.status != 200) {
+    //         console.log("There was an error with the input.")
+    //     }
+    // }
+
 
     // Send the request and wait for the response
     xhttp.send(JSON.stringify(dict));
