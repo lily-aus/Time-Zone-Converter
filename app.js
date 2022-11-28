@@ -1,3 +1,7 @@
+// Name: Lili Du
+// CS361 Portofolio Project: Time Zone Converter
+
+
 const { Console } = require('console')
 const express = require('express')
 const app = express()
@@ -24,12 +28,6 @@ app.get('/contact.html', function (req, res) {
     res.sendFile('contact.html', {
         root: 'C:/Users/Oooo/Desktop/CS361/TimeZoneConverter'
     });
-});
-
-
-app.post('/test.html', function (req, res) {
-    console.log(req.body);
-    res.end();
 });
 
 

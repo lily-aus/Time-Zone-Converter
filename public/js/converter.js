@@ -1,5 +1,3 @@
-const { json } = require("express");
-
 function convertTime() {
     // Get a reference to the base city table
     let baseTable = document.getElementById('baseSelection');
@@ -23,21 +21,49 @@ function convertTime() {
 
     // Setup AJAX request
     var xhttp = new XMLHttpRequest();
-    xhttp.open("POST", "/test.html", true);
+    xhttp.open("POST", "http://localhost:3000/convert", true);
     xhttp.setRequestHeader("Content-Type", "application/json");
 
-    // Tell AJAX request how to resolve (to update once microservice is available)
-    //  xhttp.onreadystatechange = () => {
-    //     if (xhttp.status == 200) {
+    // Tell AJAX request how to resolve 
+    xhttp.onreadystatechange = () => {
+        if (xhttp.status == 200) {
+            let parsedData = JSON.parse(xhttp.response);
 
-    //         // Display the data in convertPage.html
-    //         to update once microservice is available
+            // check the data received from microservice
+            console.log(parsedData);
 
-    //     }
-    //     else if (xhttp.status != 200) {
-    //         console.log("There was an error with the input.")
-    //     }
-    // }
+            // remove convert button
+            const convertButton = document.querySelector(".btn2");
+            convertButton.remove();
+
+            // get a reference to the convert table
+            let currentTable = document.getElementById("moreCity");
+            let trs = currentTable.querySelectorAll("tr");
+
+            // first remove the "remove" button
+            // then add the converted date and time to the row
+            for (let tr of trs) {
+                let btn = tr.querySelector("td button");
+                btn.remove();
+
+                let city = tr.querySelector("td select");
+
+                for (let city_ of parsedData.target) {
+                    if (city.value == city_.city) {
+                        const para = document.createElement("p");
+                        para.setAttribute('class', 'convertStyle');
+                        para.innerText = city_.datetime;
+                        tr.appendChild(para);
+
+                        break;
+                    };
+                };
+            };
+        }
+        else if (xhttp.status != 200) {
+            console.log("There was an error with the input.")
+        }
+    }
 
 
     // Send the request and wait for the response

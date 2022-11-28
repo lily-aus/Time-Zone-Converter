@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <h2>Time Zone Converter</h2>
+    <h1>Time Zone Converter</h1>
     <meta name="description" content="Home page">
     <meta name="keywords" content="time convert">
     <link rel="stylesheet" href="/css/styles.css">
@@ -47,10 +47,22 @@
                 </div>
 
                 <div class="form-group">
-                    <button type="submit" id="contact-submit" class="btn">Send Message</button>
+                    <button type="submit" id="contact-submit" class="btn" onclick="sendMsg()">Send Message</button>
                     <button type="submit" onclick='location.href="homePage.html"' class="btn">Cancel</button>
                 </div>
             </form>
         </div>
     </div>
+
+    <script>
+        function sendMsg() {
+            let text = "Message sent!";
+            if (confirm(text) == true) {
+                location.href = "homePage.html";
+            } else {
+
+            }
+        }
+    </script>
+
 </body>

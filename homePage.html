@@ -3,11 +3,14 @@
 <html>
 
 <head>
-    <h2>Time Zone Converter</h2>
+    <h1>Time Zone Converter</h1>
     <meta name="description" content="Home page">
     <meta name="keywords" content="time convert">
     <link rel="stylesheet" href="/css/styles.css">
 </head>
+
+
+
 
 <body class="page">
     <div class="announcement">
@@ -21,30 +24,58 @@
             <th>Time</th>
         </tr>
         <tr>
-            <td><input type="text" id="baseCity" class="input-base-city"></td>
+            <td>
+                <select id="baseCity" class="input-base-city">
+                    <option value="Europe/London">London, Europe</option>
+                    <option value="Europe/Paris">Paris, Europe</option>
+                    <option value="America/New_York">New York, America</option>
+                    <option value="Asia/Hong_Kong">Hong Kong, Asia</option>
+                    <option value="America/Los_Angeles">Los Angeles, America</option>
+                    <option value="America/Chicago">Chicago, America</option>
+                    <option value="Asia/Dubai">Dubai, Asia</option>
+                    <option value="Australia/Sydney">Sydney, Australia</option>
+                    <option value="Europe/Stockholm">Stockholm, Europe</option>
+                    <option value="Africa/Cairo">Cairo, Africa</option>
+                </select>
+            </td>
             <td><input type="date" class="input-date" id="baseDate">
                 <script>
                     let today = new Date().toISOString().substr(0, 10);
                     document.querySelector(".input-date").value = today;
                 </script>
             </td>
-            <td><input type="time" id="baseTime" value="08:00:00" class="input-time"></td>
+            <td><input type="time" id="baseTime" value="08:00" class="input-time"></td>
         </tr>
     </table>
 
+    <button type="button" onclick="addNewRowBelow()" class="btn2">Add City</button>
+    <br>
     <table id="moreCity">
-
         <tr>
-            <td><button type="button" onclick="addNewRowBelow()" class="btn">Add City</button></td>
-            <td></td>
-        </tr>
-        <tr>
-            <td><input type="text" name="city2" class="input-more-city"></td>
-            <td><button type="button" onclick="deleteCurrentRow()" class="btn">Remove</button></td>
+            <td>
+                <select class="input-more-city">
+                    <option value="Europe/London">London, Europe</option>
+                    <option value="Europe/Paris">Paris, Europe</option>
+                    <option value="America/New_York">New York, America</option>
+                    <option value="Asia/Hong_Kong">Hong Kong, Asia</option>
+                    <option value="America/Los_Angeles">Los Angeles, America</option>
+                    <option value="America/Chicago">Chicago, America</option>
+                    <option value="Asia/Dubai">Dubai, Asia</option>
+                    <option value="Australia/Sydney">Sydney, Australia</option>
+                    <option value="Europe/Stockholm">Stockholm, Europe</option>
+                    <option value="Africa/Cairo">Cairo, Africa</option>
+                </select>
+            </td>
+            <td>
+                <button type="button" onclick="deleteCurrentRow()" class="btn">Remove</button>
+            </td>
         </tr>
     </table>
+    <br>
 
-    <button type="button" onclick="convertTime()" class="btn">Convert Time</button>
+    <button type="button" onclick="convertTime()" class="btn2">Convert Time</button>
+    <button type="button" onclick="confirmFunction()" class="btn">Start again</button>
+
 
     <br><br><br>
     <a href="contact.html">Contact us</a>
@@ -56,7 +87,18 @@
             var newRow = table.insertRow(currentRowCount);
             var cell1 = newRow.insertCell(0);
             var cell2 = newRow.insertCell(1);
-            cell1.innerHTML = '<input type="text" name="city2" class="input-more-city">';
+            cell1.innerHTML = '<select class="input-more-city"> \n' +
+                '<option value="Europe/London">London, Europe</option>\n' +
+                '<option value="Europe/Paris">Paris, Europe</option>\n' +
+                '<option value="America/New_York">New York, America</option>\n' +
+                '<option value="Asia/Hong_Kong">Hong Kong, Asia</option>\n' +
+                '<option value="America/Los_Angeles">Los Angeles, America</option>\n' +
+                '<option value="America/Chicago">Chicago, America</option>\n' +
+                '<option value="Asia/Dubai">Dubai, Asia</option>\n' +
+                '<option value="Australia/Sydney">Sydney, Australia</option>\n' +
+                '<option value="Europe/Stockholm">Stockholm, Europe</option>\n' +
+                '<option value="Africa/Cairo">Cairo, Africa</option>';
+
             cell2.innerHTML = '<button type="button" onclick="deleteCurrentRow()" class="btn">Remove</button>';
         }
 
@@ -67,7 +109,18 @@
         }
 
     </script>
+
+    <script>
+        function confirmFunction() {
+            let text = "Are you sure? \nAfter clicking OK, you will start a new selection.";
+            if (confirm(text) == true) {
+                location.href = "homePage.html";
+            } else {
+            }
+        }
+    </script>
     <script src="/js/converter.js"></script>
+
 
 </body>
 
